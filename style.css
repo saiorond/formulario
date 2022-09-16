@@ -35,8 +35,8 @@ form {
 }
 
 .controle-form {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
+    margin-bottom: 7px;
+    padding-bottom: 7px;
     position: relative;
 }
 
@@ -63,9 +63,11 @@ form {
 }
 
 .controle-form small {
-    position: absolute;
+    font-size: 12px;
+    font-weight: bold;
     bottom: 0;
     left: 0;
+    margin-left: 4px;
     visibility: hidden;
 }
 
@@ -87,3 +89,26 @@ form {
 }
 
 /* erro e sucesso */
+
+.controle-form.sucess input {
+    border-color: #2ecc70; 
+} 
+
+.controle-form.error input {
+    border-color: #e74c3c; 
+} 
+
+.controle-form.sucess i.fa-check-circle {
+    color: #2ecc71; 
+    visibility: visible;
+} 
+
+.controle-form.error i.fa-exclamation-circle {
+    color: #e74c3c; 
+    visibility: visible;
+}
+
+.controle-form.error small {
+    visibility: visible;
+    color: #e74c3c;
+}
