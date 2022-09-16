@@ -57,7 +57,7 @@ form {
 
 .controle-form i {
     position: absolute;
-    top: 45%;
+    top: 40%;
     right: 10px;
     visibility: hidden;
 }
@@ -91,7 +91,7 @@ form {
 /* erro e sucesso */
 
 .controle-form.sucess input {
-    border-color: #2ecc70; 
+    border: 3px solid #11a950; 
 } 
 
 .controle-form.error input {
@@ -110,5 +110,5 @@ form {
 
 .controle-form.error small {
     visibility: visible;
-    color: #e74c3c;
+    color: #c31a08;
 }

@@ -5,20 +5,35 @@ const senha = document.getElementById('senha');
 const senhaConfirmacao = document.getElementById('senha-confirmacao');
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault()
+    e.preventDefault();
+
+    checarInputs();
 });
 
 function checarInputs() {
     const usernameValue = username.value;
     const emailValue = email.value;
     const senhaValue = senha.value;
-    const senhaConfirmacaoValue = senhaConfirmacao.value;
+    
 
-    if(usernameValue == "" ) {
+    if (usernameValue == "" ) {
         mensagemDeErro(username, "O nome de usuário é obrigatório");
+    } else {
+        mensagemDeSucesso(username);
     }
 } 
 
-function mensagemDeErro(input, mensagem) {
-    
+function mensagemDeErro(input, message) {
+    const controleForm = input.parentElement;
+    const small = controleForm.querySelector("small");
+
+    small.innerText = message;
+
+    controleForm.className = "controle-form error"
+}
+
+function mensagemDeSucesso(input) {
+    const controleForm = input.parentElement;
+
+    controleForm.className = "controle-form sucess"
 }
