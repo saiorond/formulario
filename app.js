@@ -29,6 +29,14 @@ function checarInputs() {
     } else {
         mensagemDeSucesso(email);
     }
+
+    if (senhaValue === "" ) {
+        mensagemDeErro(senha, "A senha é obrigatória");
+    } else if (senhaValue.length < 7) {
+        mensagemDeErro(senha, "A senha deve ter no mínimo 7 caracteres")
+    } else {
+        mensagemDeSucesso(senha);
+    }
 } 
 
 function mensagemDeErro(input, message) {
