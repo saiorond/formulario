@@ -14,12 +14,20 @@ function checarInputs() {
     const usernameValue = username.value;
     const emailValue = email.value;
     const senhaValue = senha.value;
-    
+   
 
-    if (usernameValue == "" ) {
+    if (usernameValue === "" ) {
         mensagemDeErro(username, "O nome de usuário é obrigatório");
     } else {
         mensagemDeSucesso(username);
+    }
+
+    if (emailValue === "" ) {
+        mensagemDeErro(email, "O e-mail é obrigatório");
+    } else if (!checkEmail(emailValue)) {
+        mensagemDeErro(email, "Por favor, insira um e-mail válido")
+    } else {
+        mensagemDeSucesso(email);
     }
 } 
 
@@ -37,3 +45,9 @@ function mensagemDeSucesso(input) {
 
     controleForm.className = "controle-form sucess"
 }
+
+function checkEmail(email) {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      email
+    );
+  }
