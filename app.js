@@ -46,6 +46,16 @@ function checarInputs() {
     } else {
         mensagemDeSucesso(confirmacao);
     }
+
+    const controlesForms = form.querySelectorAll(".controle-form");
+
+    const validandoForm = [...controlesForms].every((controleForm) => {
+        return controleForm.className === "controle-form sucess";
+    });
+
+    if (validandoForm) {
+        alert("O formulário está preenchido corretamente!")
+    }
 } 
 
 function mensagemDeErro(input, message) {
