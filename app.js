@@ -2,7 +2,7 @@ const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const senha = document.getElementById('senha');
-const senhaConfirmacao = document.getElementById('senha-confirmacao');
+const confirmacao = document.getElementById('senha-confirmacao');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -14,6 +14,7 @@ function checarInputs() {
     const usernameValue = username.value;
     const emailValue = email.value;
     const senhaValue = senha.value;
+    const confirmacaoValue = confirmacao.value;
    
 
     if (usernameValue === "" ) {
@@ -36,6 +37,14 @@ function checarInputs() {
         mensagemDeErro(senha, "A senha deve ter no mínimo 7 caracteres")
     } else {
         mensagemDeSucesso(senha);
+    }
+
+    if (confirmacaoValue === "" ) {
+        mensagemDeErro(confirmacao, "A confirmação da senha é obrigatória")
+    } else if (confirmacaoValue !== senhaValue) {
+        mensagemDeErro(confirmacao, "As senhas não conferem")
+    } else {
+        mensagemDeSucesso(confirmacao);
     }
 } 
 
